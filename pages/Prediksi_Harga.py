@@ -5,7 +5,6 @@ from plotly import graph_objs as go
 from prophet import Prophet
 from prophet.plot import plot_plotly
 
-
 START = "2022-08-01"
 TODAY = date.today().strftime("%Y-%m-%d")
 
@@ -65,4 +64,3 @@ st.subheader(f"Prediksi harga {selected_stocks} {period} hari kedepan")
 st.table(forecast[['tanggal', 'prediksi']].tail(period))
 
 plot_raw_data2()
-
