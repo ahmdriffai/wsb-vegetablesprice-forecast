@@ -14,8 +14,6 @@ st.title("Prediksi Harga Sayur")
 stock = ("KTG", "CRM", "CMK")
 
 selected_stocks = st.selectbox("Selecet", stock)
-n_year = st.slider(F"Prediksi perhari ke-", 1, 30)
-period = n_year
 
 @st.cache_data
 def load_data(pick_harga):
@@ -31,7 +29,7 @@ data_load_state.text("")
 
 
 st.subheader(f"Data harga {selected_stocks} 5 hari terakhir")
-st.table(data[['tanggal', 'bulan', 'tahun', 'harga']].tail(5))
+st.table(data[['tanggal', 'harga']].tail(5))
 
 def plot_raw_data():
     fig = go.Figure()
@@ -42,6 +40,8 @@ def plot_raw_data():
 plot_raw_data()
 
 # forecasting
+n_year = st.slider(F"Prediksi perhari ke-", 1, 30)
+period = n_year
 
 df_train = data[['tanggal', 'harga']]
 df_train = df_train.rename(columns={"tanggal": "ds", "harga": "y"})
