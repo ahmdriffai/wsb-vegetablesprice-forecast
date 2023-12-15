@@ -11,7 +11,7 @@ TODAY = date.today().strftime("%Y-%m-%d")
 st.title("Prediksi Harga Sayur")
 
 
-stock = ("KTG", "CRM", "CMK")
+stock = ("KTG", "CRM", "CMK", "BMK")
 
 selected_stocks = st.selectbox("Selecet", stock)
 
@@ -64,3 +64,20 @@ st.subheader(f"Prediksi harga {selected_stocks} {period} hari kedepan")
 st.table(forecast[['tanggal', 'prediksi']].tail(period))
 
 plot_raw_data2()
+
+# pkl
+import streamlit as st
+import pickle
+
+# Muat model dari file pickle
+# with open('../model/model.pkl', 'rb') as file:
+#     model = pickle.load(file)
+
+# Prediksi menggunakan model
+
+# data_awal_predict = df_train[:-20]
+# predict = []
+
+# for i in range(period):
+#     predict.append(model.predict([[]]))
+# prediction = model.predict([[input_value]])
