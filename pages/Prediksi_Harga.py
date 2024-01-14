@@ -56,7 +56,7 @@ m.fit(df_train)
 future = m.make_future_dataframe(period)
 
 forecast = m.predict(future)
-print(forecast)
+# print(forecast)
 # print(forecast)
 forecast = forecast.rename(columns={"ds": "tanggal", "yhat": "prediksi"})
 
@@ -70,35 +70,14 @@ filtered_df = forecast.loc[(forecast['tanggal'] == f'{tanggal} 00:00:00')]
 
 kpi1, kpi2 = st.columns(2)
 kpi1.metric(label=f"Harga {selected_stocks} per tanggal {tanggal}", value=format(int(filtered_df['prediksi'].values[0]), ','))
-# res = card(
-#     title=f"Rp. {format(int(filtered_df['prediksi'].values[0]), ',')}",
-#     text=f"Harga {selected_stocks} per {tanggal}",
-#     image="https://unsplash.com/photos/brown-round-food-in-stainless-steel-container-52DMHPBAvXY"
-# )
+
 def plot_raw_data2():
     fig = go.Figure()
     fig.add_trace(go.Scatter(x=forecast['tanggal'].tail(period), y=forecast['prediksi'].tail(period), name='harga_kentang'))
     fig.layout.update(title_text=f"Grafik Prediksi Harga {selected_stocks} 1 Tahun Kedepan", xaxis_rangeslider_visible=True)
     st.plotly_chart(fig)
 
-st.subheader(f"Prediksi harga {selected_stocks} {period} hari kedepan")
-st.table(forecast[['tanggal','prediksi']].tail(period))
+# st.subheader(f"Prediksi harga {selected_stocks} {period} hari kedepan")
+# st.table(forecast[['tanggal','prediksi']].tail(period))
 
 plot_raw_data2()
-
-# pkl
-import streamlit as st
-import pickle
-
-# Muat model dari file pickle
-# with open('../model/model.pkl', 'rb') as file:
-#     model = pickle.load(file)
-
-# Prediksi menggunakan model
-
-# data_awal_predict = df_train[:-20]
-# predict = []
-
-# for i in range(period):
-#     predict.append(model.predict([[]]))
-# prediction = model.predict([[input_value]])
