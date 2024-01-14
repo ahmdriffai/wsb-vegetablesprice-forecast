@@ -81,8 +81,8 @@ def plot_raw_data2():
     fig.layout.update(title_text=f"Grafik Prediksi Harga {selected_stocks} 1 Tahun Kedepan", xaxis_rangeslider_visible=True)
     st.plotly_chart(fig)
 
-# st.subheader(f"Prediksi harga {selected_stocks} {period} hari kedepan")
-# st.table(forecast.tail(period))
+st.subheader(f"Prediksi harga {selected_stocks} {period} hari kedepan")
+st.table(forecast[['tanggal','prediksi']].tail(period))
 
 plot_raw_data2()
 
