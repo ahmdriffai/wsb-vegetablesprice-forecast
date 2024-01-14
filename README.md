@@ -1,3 +1,13 @@
+# Prediksi Harga Kentang Wonosobo
+Aplikasi untuk prediksi harga kentang di Wonosobo.
+[Guide Book](https://github.com/ahmdriffai/wsb-vegetablesprice-forecast)
+
+## Table of Contents
+- [Prediksi Harga Kentang Wonosobo](#prediksi-harga-kentang-wonosobo)
+  - [Table of Contents](#table-of-contents)
+  - [Panduan Install Aplikasi](#panduan-install-aplikasi)
+  - [Panduan Penggunaan Aplikasi](#panduan-penggunaan-aplikasi)
+  
 ## Panduan Install Aplikasi
 
 - Sebelum membuat proyek Laravel pertama Anda, pastikan bahwa mesin lokal Anda telah menginstal Python v9.1 keatas dan PIP.
